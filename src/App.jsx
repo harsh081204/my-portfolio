@@ -5,6 +5,7 @@ const Portfolio = () => {
   const [activeFilter, setActiveFilter] = useState('All');
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
+  const [visibleTimelineItems, setVisibleTimelineItems] = useState(new Set());
 
   useEffect(() => {
     const handleScroll = () => {
@@ -12,6 +13,28 @@ const Portfolio = () => {
     };
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
+
+  // Timeline scroll animation
+  useEffect(() => {
+    const observerOptions = {
+      threshold: 0.3,
+      rootMargin: '0px 0px -100px 0px'
+    };
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          const index = entry.target.getAttribute('data-index');
+          setVisibleTimelineItems(prev => new Set([...prev, parseInt(index)]));
+        }
+      });
+    }, observerOptions);
+
+    const timelineItems = document.querySelectorAll('.timeline-item');
+    timelineItems.forEach(item => observer.observe(item));
+
+    return () => observer.disconnect();
   }, []);
 
   // Set body styles on mount
@@ -97,6 +120,50 @@ const Portfolio = () => {
     ]
   };
 
+  const timeline = [
+    {
+      date: "2020",
+      title: "Started Programming",
+      description: "Began my coding journey with Python and discovered the world of software development",
+      tech: ["Python", "Basic Algorithms"],
+      icon: "🎯"
+    },
+    {
+      date: "2021",
+      title: "Web Development",
+      description: "Dove into full-stack web development, building dynamic applications with modern frameworks",
+      tech: ["HTML", "CSS", "JavaScript", "React"],
+      icon: "🌐"
+    },
+    {
+      date: "2022",
+      title: "Machine Learning",
+      description: "Explored ML fundamentals, working with scikit-learn and building predictive models",
+      tech: ["scikit-learn", "Pandas", "NumPy", "Matplotlib"],
+      icon: "🤖"
+    },
+    {
+      date: "2023",
+      title: "Deep Learning & AI",
+      description: "Advanced into neural networks, computer vision, and NLP with deep learning frameworks",
+      tech: ["TensorFlow", "PyTorch", "OpenCV", "BERT"],
+      icon: "🧠"
+    },
+    {
+      date: "2024",
+      title: "GenAI & LLMs",
+      description: "Specialized in Generative AI, working with LLMs, RAG systems, and AI agents",
+      tech: ["LangChain", "OpenAI API", "Vector DBs", "Transformers"],
+      icon: "✨"
+    },
+    {
+      date: "Present",
+      title: "AI/ML Engineer",
+      description: "Building production-ready AI applications and exploring cutting-edge AI technologies",
+      tech: ["Full-Stack AI", "MLOps", "Cloud Deployment"],
+      icon: "🚀"
+    }
+  ];
 
   const categories = ["All", "GenAI", "Deep Learning", "ML", "Full-Stack", "NLP", "Computer Vision"];
 
@@ -122,6 +189,7 @@ const Portfolio = () => {
             {/* Desktop Menu */}
             <div className="hidden md:flex space-x-8">
               <button onClick={() => scrollToSection('about')} className="hover:text-purple-400 transition">About</button>
+              <button onClick={() => scrollToSection('timeline')} className="hover:text-purple-400 transition">Journey</button>
               <button onClick={() => scrollToSection('skills')} className="hover:text-purple-400 transition">Skills</button>
               <button onClick={() => scrollToSection('projects')} className="hover:text-purple-400 transition">Projects</button>
               <button onClick={() => scrollToSection('contact')} className="hover:text-purple-400 transition">Contact</button>
@@ -139,6 +207,7 @@ const Portfolio = () => {
           <div className="md:hidden bg-slate-900/95 backdrop-blur-lg w-full">
             <div className="px-2 pt-2 pb-3 space-y-1 max-w-7xl mx-auto">
               <button onClick={() => scrollToSection('about')} className="block w-full text-left px-3 py-2 hover:bg-purple-800/30 rounded">About</button>
+              <button onClick={() => scrollToSection('timeline')} className="block w-full text-left px-3 py-2 hover:bg-purple-800/30 rounded">Journey</button>
               <button onClick={() => scrollToSection('skills')} className="block w-full text-left px-3 py-2 hover:bg-purple-800/30 rounded">Skills</button>
               <button onClick={() => scrollToSection('projects')} className="block w-full text-left px-3 py-2 hover:bg-purple-800/30 rounded">Projects</button>
               <button onClick={() => scrollToSection('contact')} className="block w-full text-left px-3 py-2 hover:bg-purple-800/30 rounded">Contact</button>
@@ -215,33 +284,67 @@ const Portfolio = () => {
               </p>
             </div>
           </div>
+        </div>
+      </section>
 
-          {/* Currently Section */}
-          {/* <div className="mt-12 bg-gradient-to-r from-purple-500/10 to-pink-500/10 backdrop-blur-lg border border-purple-500/20 rounded-2xl p-8">
-            <h3 className="text-2xl font-bold mb-6 flex items-center gap-2">
-              <Layers className="text-purple-400" />
-              Currently
-            </h3>
-            <div className="grid md:grid-cols-3 gap-6">
-              <div>
-                <p className="text-purple-400 font-semibold mb-2">📚 Learning</p>
-                <p className="text-gray-300">Edge AI optimization with TensorRT</p>
+      {/* Timeline Section */}
+      <section id="timeline" className="py-20 px-4 bg-black/20">
+        <div className="max-w-6xl mx-auto">
+          <h2 className="text-4xl md:text-5xl font-bold mb-4 text-center">My Journey</h2>
+          <p className="text-gray-400 text-center mb-16 max-w-2xl mx-auto">
+            From writing my first line of code to building AI-powered applications
+          </p>
+          
+          <div className="relative">
+            {/* Vertical Line */}
+            <div className="absolute left-1/2 transform -translate-x-1/2 w-1 h-full bg-gradient-to-b from-purple-500 via-pink-500 to-blue-500 opacity-20"></div>
+            
+            {timeline.map((item, idx) => (
+              <div
+                key={idx}
+                data-index={idx}
+                className={`timeline-item relative mb-16 transition-all duration-700 ${
+                  visibleTimelineItems.has(idx) 
+                    ? 'opacity-100 translate-y-0' 
+                    : 'opacity-0 translate-y-10'
+                }`}
+              >
+                <div className={`flex items-center ${idx % 2 === 0 ? 'flex-row' : 'flex-row-reverse'}`}>
+                  {/* Content Card */}
+                  <div className={`w-full md:w-5/12 ${idx % 2 === 0 ? 'md:pr-8 text-right' : 'md:pl-8 text-left'}`}>
+                    <div className="bg-white/5 backdrop-blur-lg border border-white/10 rounded-2xl p-6 hover:bg-white/10 transition group">
+                      <div className="flex items-center gap-3 mb-3" style={{ justifyContent: idx % 2 === 0 ? 'flex-end' : 'flex-start' }}>
+                        <span className="text-3xl">{item.icon}</span>
+                        <div>
+                          <span className="text-purple-400 font-bold text-sm">{item.date}</span>
+                          <h3 className="text-xl font-bold group-hover:text-purple-400 transition">{item.title}</h3>
+                        </div>
+                      </div>
+                      <p className="text-gray-300 mb-4">{item.description}</p>
+                      <div className="flex flex-wrap gap-2" style={{ justifyContent: idx % 2 === 0 ? 'flex-end' : 'flex-start' }}>
+                        {item.tech.map(tech => (
+                          <span key={tech} className="px-3 py-1 bg-purple-500/20 rounded-full text-xs border border-purple-500/30">
+                            {tech}
+                          </span>
+                        ))}
+                      </div>
+                    </div>
+                  </div>
+                  
+                  {/* Center Circle */}
+                  <div className="absolute left-1/2 transform -translate-x-1/2 w-6 h-6 bg-gradient-to-br from-purple-500 to-pink-500 rounded-full border-4 border-slate-900 z-10 group-hover:scale-125 transition"></div>
+                  
+                  {/* Empty space on other side */}
+                  <div className="hidden md:block w-5/12"></div>
+                </div>
               </div>
-              <div>
-                <p className="text-pink-400 font-semibold mb-2">🔨 Building</p>
-                <p className="text-gray-300">AI-powered code documentation tool</p>
-              </div>
-              <div>
-                <p className="text-blue-400 font-semibold mb-2">🎯 Exploring</p>
-                <p className="text-gray-300">Multi-modal AI applications</p>
-              </div>
-            </div>
-          </div> */}
+            ))}
+          </div>
         </div>
       </section>
 
       {/* Skills Section */}
-      <section id="skills" className="py-10 px-4 bg-black/20">
+      <section id="skills" className="py-10 px-4">
         <div className="max-w-6xl mx-auto">
           <h2 className="text-4xl md:text-5xl font-bold mb-10 text-center">Tech Stack</h2>
           
@@ -263,7 +366,7 @@ const Portfolio = () => {
       </section>
 
       {/* Projects Section */}
-      <section id="projects" className="py-10 px-4">
+      <section id="projects" className="py-10 px-4 bg-black/20">
         <div className="max-w-7xl mx-auto">
           <h2 className="text-4xl md:text-5xl font-bold mb-10 text-center">Featured Projects</h2>
           
@@ -315,10 +418,6 @@ const Portfolio = () => {
                       <Github size={16} />
                       Code
                     </a>
-                    {/* <a href={project.demo} className="flex items-center gap-2 px-4 py-2 bg-purple-500/20 rounded-lg hover:bg-purple-500/30 transition text-sm">
-                      <ExternalLink size={16} />
-                      Demo
-                    </a> */}
                   </div>
                 </div>
               </div>
@@ -328,7 +427,7 @@ const Portfolio = () => {
       </section>
 
       {/* Contact Section */}
-      <section id="contact" className="py-10 px-4 bg-black/20">
+      <section id="contact" className="py-10 px-4">
         <div className="max-w-4xl mx-auto text-center">
           <h2 className="text-4xl md:text-5xl font-bold mb-6">Let's Build Something Together</h2>
           <p className="text-xl text-gray-300 mb-10">
@@ -364,7 +463,6 @@ const Portfolio = () => {
       <footer className="py-2 px-4 border-t border-white/10">
         <div className="max-w-7xl mx-auto text-center text-gray-400">
           <p>© 2025 Portfolio. Built with React & Tailwind CSS</p>
-          {/* <p className="text-sm mt-2">Designed with ❤️ and AI</p> */}
         </div>
       </footer>
     </div>
