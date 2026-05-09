@@ -1,16 +1,52 @@
-# React + Vite
+# Harsh Vardhan | Portfolio
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A professional engineering portfolio showcasing expertise in AI/ML, Full-Stack Development, and System Architecture.
 
-Currently, two official plugins are available:
+## 🚀 Overview
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+This portfolio is built using **React** and **Vite**, following a custom **Design System** focused on precision, clarity, and technical authority. It features a modular architecture with high-quality, reusable components.
 
-## React Compiler
+## 🛠️ Tech Stack
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+- **Core:** React 19, JavaScript
+- **Styling:** Vanilla CSS with Design System Tokens
+- **Icons:** Lucide-React
+- **Build Tool:** Vite
 
-## Expanding the ESLint configuration
+## 📁 Directory Structure
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+```text
+my-portfolio/
+├── src/
+│   ├── components/       # Modular UI components
+│   ├── index.css         # Design system tokens and global styles
+│   ├── App.jsx           # Main application entry
+│   └── main.jsx          # React initialization
+├── public/               # Static assets
+└── index.html            # HTML entry with SEO optimization
+```
+
+## 🎨 Design System
+
+The project utilizes a custom design system defined by:
+- **Primary Color:** Navy (#355872)
+- **Secondary Color:** Sky (#7AAACE)
+- **Accent Color:** Amber (#E8A24B)
+- **Typography:** Inter (Body), Outfit (Headings)
+
+## 🏁 Getting Started
+
+1. **Install Dependencies:**
+   ```bash
+   npm install
+   ```
+
+2. **Run Development Server:**
+   ```bash
+   npm run dev
+   ```
+
+3. **Build for Production:**
+   ```bash
+   npm run build
+   ```
