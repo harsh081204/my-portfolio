@@ -19,7 +19,7 @@ const Contact = () => {
               </div>
               <div style={{ textAlign: 'left' }}>
                 <div className="t-label">Email</div>
-                <div className="t-body" style={{ color: 'var(--ds-navy)', fontWeight: '600' }}>harsh081204@gmail.com</div>
+                <div className="t-body" style={{ color: 'var(--ds-navy)', fontWeight: '600', wordBreak: 'break-all' }}>harsh081204@gmail.com</div>
               </div>
             </a>
 
@@ -32,6 +32,16 @@ const Contact = () => {
                 <div className="t-body" style={{ color: 'var(--ds-navy)', fontWeight: '600' }}>Harsh Vardhan</div>
               </div>
             </a>
+
+            <a href="tel:+91-9151506344" className="card" style={{ textDecoration: 'none', display: 'flex', alignItems: 'center', gap: '1rem', padding: '1.5rem' }}>
+              <div style={{ background: '#25D366', color: 'white', padding: '0.75rem', borderRadius: '10px' }}>
+                <span style={{ fontSize: '20px', lineHeight: 1 }}>📱</span>
+              </div>
+              <div style={{ textAlign: 'left' }}>
+                <div className="t-label">Phone</div>
+                <div className="t-body" style={{ color: 'var(--ds-navy)', fontWeight: '600' }}>+91-9151506344</div>
+              </div>
+            </a>
           </div>
 
           <div className="card" style={{ padding: '3rem' }}>
@@ -39,13 +49,13 @@ const Contact = () => {
             <div style={{ display: 'flex', flexDirection: 'column', gap: '1.5rem', maxWidth: '500px', margin: '0 auto' }}>
               <div style={{ textAlign: 'left' }}>
                 <label className="t-label" style={{ marginBottom: '0.5rem', display: 'block' }}>Message</label>
-                <textarea 
-                  placeholder="Tell me about your project..." 
-                  style={{ 
-                    width: '100%', 
-                    padding: '1rem', 
-                    borderRadius: '8px', 
-                    border: '1px solid var(--ds-border)', 
+                <textarea
+                  placeholder="Tell me about your project..."
+                  style={{
+                    width: '100%',
+                    padding: '1rem',
+                    borderRadius: '8px',
+                    border: '1px solid var(--ds-border)',
                     background: 'var(--ds-white)',
                     minHeight: '120px',
                     fontFamily: 'inherit'

@@ -11,7 +11,7 @@ const Hero = () => {
             Building <span style={{ color: 'var(--ds-navy)' }}>intelligent</span> applications with precision.
           </h1>
           <p className="t-body" style={{ fontSize: '1.2rem', marginBottom: '2.5rem', maxWidth: '600px' }}>
-            I'm Harsh Vardhan, a software engineer specialized in AI/ML and full-stack development. I bridge the gap between complex algorithms and intuitive user experiences.
+            I'm Harsh Vardhan, a driven Software Engineer with expertise in Full-Stack development, Backend systems, and AI/ML. Experienced in building distributed systems and leveraging Generative AI to solve complex technical challenges.
           </p>
           
           <div style={{ display: 'flex', gap: '1rem', flexWrap: 'wrap' }}>

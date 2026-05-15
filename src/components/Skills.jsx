@@ -5,19 +5,19 @@ const Skills = () => {
     {
       category: "AI & Machine Learning",
       items: [
-        { name: "Deep Learning (TF/PyTorch)", score: 90 },
+        { name: "Deep Learning (PyTorch/TF)", score: 90 },
         { name: "GenAI & LLM Orchestration", score: 95 },
-        { name: "Computer Vision", score: 85 },
-        { name: "Natural Language Processing", score: 88 }
+        { name: "Multi-Agent Systems", score: 85 },
+        { name: "RAG Systems & Vector DBs", score: 92 }
       ]
     },
     {
-      category: "Technical Stack",
+      category: "Backend & Systems",
       items: [
-        { name: "Python / C++", score: 95 },
-        { name: "React / Next.js", score: 92 },
-        { name: "Node.js / FastAPI", score: 90 },
-        { name: "Docker / Kubernetes", score: 80 }
+        { name: "Node.js / FastAPI / Go", score: 92 },
+        { name: "Distributed Systems & Microservices", score: 90 },
+        { name: "PostgreSQL / MongoDB / Redis", score: 88 },
+        { name: "Docker / Kafka / AWS", score: 85 }
       ]
     }
   ];
@@ -58,9 +58,9 @@ const Skills = () => {
         </div>
 
         <div style={{ marginTop: '5rem', padding: '2.5rem', background: 'rgba(255,255,255,0.05)', borderRadius: '16px', border: '1px solid rgba(255,255,255,0.1)' }}>
-          <h3 className="t-h2" style={{ color: 'white', fontSize: '1rem', marginBottom: '1.5rem' }}>Full Stack & Tools</h3>
+          <h3 className="t-h2" style={{ color: 'white', fontSize: '1rem', marginBottom: '1.5rem' }}>Languages & Tools</h3>
           <div style={{ display: 'flex', gap: '1rem', flexWrap: 'wrap' }}>
-            {["PostgreSQL", "MongoDB", "Redis", "AWS", "Git", "LangChain", "Vector DBs", "Streamlit", "Figma"].map(tool => (
+            {["JavaScript", "Python", "C/C++", "Go", "React.js", "Next.js", "Streamlit", "PostgreSQL", "MongoDB", "Redis", "Kafka", "Docker", "AWS", "LangChain", "CrewAI", "Git"].map(tool => (
               <span key={tool} className="badge" style={{ background: 'rgba(255,255,255,0.1)', color: 'var(--ds-light)', border: '1px solid rgba(255,255,255,0.1)' }}>
                 {tool}
               </span>

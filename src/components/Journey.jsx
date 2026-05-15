@@ -3,32 +3,32 @@ import React from 'react';
 const Journey = () => {
   const timeline = [
     {
-      date: "2024",
-      title: "GenAI & LLMs",
-      company: "Specialization",
-      desc: "Deep dive into Generative AI, RAG systems, and AI agent orchestration.",
-      tech: ["LangChain", "OpenAI", "Vector DBs"]
+      date: "Dec 2025",
+      title: "Research Paper Co-Author",
+      company: "Springer International Conference",
+      desc: "Co-authored a research paper on SDLC optimization methodologies (ASAF: A Hybrid Approach of SDLC).",
+      tech: ["Research", "SDLC", "Optimization"]
     },
     {
-      date: "2023",
-      title: "Deep Learning",
-      company: "Advanced Studies",
-      desc: "Advanced neural networks, computer vision, and NLP implementations.",
-      tech: ["PyTorch", "TensorFlow", "BERT"]
+      date: "06/2025 - 09/2025",
+      title: "Software Engineer Intern",
+      company: "Invariance Automation",
+      desc: "Engineered a professional-grade multi-firmware desktop app for high-precision CNC machine control with zero-latency communication.",
+      tech: ["Python", "PySide6", "PySerial"]
     },
     {
-      date: "2022",
-      title: "Machine Learning",
-      company: "Foundations",
-      desc: "Building predictive models and mastering data science fundamentals.",
-      tech: ["scikit-learn", "Pandas", "NumPy"]
+      date: "July 2025",
+      title: "Team Lead - Smart India Hackathon",
+      company: "Institute Level Qualifier",
+      desc: "Led a 6-member team to design and build a full-stack ed-tech platform under agile, time-constrained conditions.",
+      tech: ["Full-Stack", "Agile", "Leadership"]
     },
     {
-      date: "2021",
-      title: "Full-Stack Dev",
-      company: "Web Ecosystem",
-      desc: "Building dynamic applications with React, Node.js, and modern frameworks.",
-      tech: ["React", "Node.js", "PostgreSQL"]
+      date: "Expected 2027",
+      title: "B.Tech in Computer Science",
+      company: "APJ Abdul Kalam Technical University",
+      desc: "Coursework in Distributed Systems, AI, Database Management, and Algorithm Design.",
+      tech: ["DSA", "OOP", "DBMS", "Computer Networks"]
     }
   ];
 

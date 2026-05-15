@@ -4,26 +4,66 @@ import { Github, ExternalLink } from 'lucide-react';
 const Projects = () => {
   const projects = [
     {
+      name: "Intelligent Fund Flow Tracking",
+      subtitle: "AI-Powered Fraud Detection",
+      desc: "Graph-based fraud detection system using NetworkX and Isolation Forest to detect money laundering across 6.3M+ transactions.",
+      tech: ["Python", "NetworkX", "Streamlit"],
+      link: "https://github.com/harsh081204/Intelligent-Fund-Flow-Tracking-System",
+      featured: true
+    },
+    {
+      name: "PayFlow",
+      subtitle: "Scalable Microservices Payment Platform",
+      desc: "High-performance payment platform with 6 microservices, Double-Entry Bookkeeping Ledger, and token bucket rate limiter.",
+      tech: ["Go", "Docker", "PostgreSQL", "Kafka"],
+      link: "https://github.com/harsh081204/payflow",
+      featured: true
+    },
+    {
+      name: "TradingAgents",
+      subtitle: "Multi-Agent Financial Framework",
+      desc: "Autonomous multi-agent system coordinating AI agents for financial analysis and trading strategy execution.",
+      tech: ["Docker", "LLMs", "Multi-Agent"],
+      link: "https://github.com/harsh081204/TradingAgents",
+      featured: false
+    },
+    {
       name: "MemoryGraph",
-      subtitle: "Dual-Layer AI Memory System",
+      subtitle: "Advanced Dual-Layer AI Memory",
       desc: "Combines vector similarity search with knowledge graph relationships for deeply contextual AI reasoning.",
-      tech: ["FastAPI", "React", "spaCy", "Ollama"],
+      tech: ["React Flow", "spaCy", "Vector DB"],
       link: "https://github.com/harsh081204/MemoryGraph",
       featured: true
     },
     {
+      name: "DayLog",
+      subtitle: "AI-Driven Behavioral Analytics",
+      desc: "Information extraction pipeline using Llama 3.3 to parse journals and provide predictive career coaching.",
+      tech: ["Groq", "Data Pipeline", "Analytics"],
+      link: "https://github.com/harsh081204/DayLog",
+      featured: false
+    },
+    {
       name: "AutoML Pipeline",
-      subtitle: "Automated ML System",
-      desc: "End-to-end AutoML pipeline for classification and regression with automated preprocessing and tuning.",
-      tech: ["Python", "scikit-learn", "Optuna", "XGBoost"],
+      subtitle: "Automated ML Optimization Framework",
+      desc: "End-to-end AutoML pipeline using Optuna for hyperparameter tuning and sophisticated ensemble learning strategies.",
+      tech: ["Python", "Optuna", "XGBoost"],
       link: "https://github.com/harsh081204/AutoML_Pipeline",
-      featured: true
+      featured: false
+    },
+    {
+      name: "StudyPal",
+      subtitle: "RAG-Based Learning Assistant",
+      desc: "Educational assistant using LangChain and ChromaDB for customized textbook querying and YouTube integration.",
+      tech: ["LangChain", "ChromaDB", "Groq"],
+      link: "https://github.com/harsh081204/studypal",
+      featured: false
     },
     {
       name: "CNC Controller",
-      subtitle: "PySide6-Based Interface",
-      desc: "A modular desktop application for CNC machine control with real-time logging and dark-themed UI.",
-      tech: ["Python", "PySide6", "Qt", "Serial"],
+      subtitle: "Industrial CNC Controller Development",
+      desc: "Professional-grade multi-firmware desktop app for CNC control with a multi-threaded asynchronous communication engine.",
+      tech: ["Python", "PySide6", "PySerial"],
       link: "https://github.com/harsh081204/cnc_machine_app",
       featured: false
     }
