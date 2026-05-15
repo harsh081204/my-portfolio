@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100">
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Outfit:wght@800&amp;display=swap');
+    text {
+      font-family: 'Outfit', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+      font-weight: 800;
+    }
+  </style>
+  <rect width="100" height="100" fill="transparent" />
+  <text x="50%" y="60%" dominant-baseline="middle" text-anchor="middle" font-size="60" fill="#355872">
+    HV<tspan fill="#7AAACE">.</tspan>
+  </text>
+</svg>

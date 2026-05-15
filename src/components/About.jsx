@@ -5,18 +5,18 @@ const About = () => {
   const pillars = [
     {
       icon: <Code2 size={24} />,
-      title: "Clean Architecture",
-      desc: "Building scalable and maintainable systems using modern best practices and design patterns."
+      title: "Distributed Architecture",
+      desc: "Building robust platforms utilizing Go, Docker, and message brokers to ensure high-availability and transactional integrity."
     },
     {
       icon: <Brain size={24} />,
-      title: "AI Integration",
-      desc: "Specialized in GenAI, RAG systems, and LLM orchestration to build truly smart applications."
+      title: "Generative AI & ML",
+      desc: "Specializing in LLM orchestration, automated hyperparameter tuning, and advanced anomaly detection models."
     },
     {
       icon: <Layers size={24} />,
-      title: "Full-Stack Mastery",
-      desc: "From training deep learning models to deploying production-ready frontends and backends."
+      title: "Full-Stack Orchestration",
+      desc: "Bridging the gap between complex backend algorithms and responsive, intuitive user interfaces using React and Streamlit."
     }
   ];
 
@@ -24,8 +24,8 @@ const About = () => {
     <section id="about" className="section" style={{ background: 'var(--ds-surface)' }}>
       <div className="container">
         <div style={{ textAlign: 'center', marginBottom: '4rem' }}>
-          <span className="section-label">Philosophy</span>
-          <h2 className="t-h1">Engineering with Purpose</h2>
+          <span className="section-label">Core Pillars</span>
+          <h2 className="t-h1">Areas of Expertise</h2>
         </div>
 
         <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))', gap: '2rem' }}>
