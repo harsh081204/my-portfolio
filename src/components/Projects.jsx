@@ -72,7 +72,7 @@ const Projects = () => {
   return (
     <section id="projects" className="section">
       <div className="container">
-        <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-end', marginBottom: '4rem' }}>
+        <div className="projects-header">
           <div>
             <span className="section-label">Selected Works</span>
             <h2 className="t-h1">Featured Projects</h2>
@@ -82,7 +82,7 @@ const Projects = () => {
           </a>
         </div>
 
-        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(320px, 1fr))', gap: '2rem' }}>
+        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(min(280px, 100%), 1fr))', gap: '2rem' }}>
           {projects.map((proj, idx) => (
             <div key={idx} className="card" style={{ display: 'flex', flexDirection: 'column', height: '100%' }}>
               <div style={{ marginBottom: '1.5rem', display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start' }}>

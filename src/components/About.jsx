@@ -28,10 +28,10 @@ const About = () => {
           <h2 className="t-h1">Areas of Expertise</h2>
         </div>
 
-        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))', gap: '2rem' }}>
+        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(min(280px, 100%), 1fr))', gap: '2rem' }}>
           {pillars.map((pillar, idx) => (
             <div key={idx} className="card" style={{ display: 'flex', flexDirection: 'column', gap: '1rem' }}>
-              <div style={{ color: 'var(--ds-navy)', background: 'var(--ds-white)', width: '48px', height: '48px', borderRadius: '12px', display: 'flex', alignItems: 'center', justifyCenter: 'center', border: '1px solid var(--ds-border)' }}>
+              <div style={{ color: 'var(--ds-navy)', background: 'var(--ds-white)', width: '48px', height: '48px', borderRadius: '12px', display: 'flex', alignItems: 'center', justifyContent: 'center', border: '1px solid var(--ds-border)' }}>
                  <div style={{ margin: 'auto' }}>{pillar.icon}</div>
               </div>
               <h3 className="t-h2">{pillar.title}</h3>

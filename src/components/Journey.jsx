@@ -35,7 +35,7 @@ const Journey = () => {
   return (
     <section id="journey" className="section">
       <div className="container">
-        <div style={{ display: 'grid', gridTemplateColumns: '1fr 2fr', gap: '4rem' }}>
+        <div className="journey-grid">
           <div>
             <span className="section-label">Evolution</span>
             <h2 className="t-h1" style={{ marginBottom: '1.5rem' }}>The Path So Far</h2>
@@ -59,7 +59,7 @@ const Journey = () => {
                     boxShadow: idx === 0 ? '0 0 0 4px rgba(53, 88, 114, 0.1)' : 'none'
                   }}></div>
                   
-                  <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'baseline', marginBottom: '0.5rem' }}>
+                  <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'baseline', marginBottom: '0.5rem', flexWrap: 'wrap', gap: '0.5rem' }}>
                     <h3 className="t-h2" style={{ fontSize: '1.1rem' }}>{item.title}</h3>
                     <span className="t-label" style={{ color: 'var(--ds-navy)' }}>{item.date}</span>
                   </div>

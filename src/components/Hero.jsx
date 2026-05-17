@@ -3,7 +3,7 @@ import { ArrowRight, ChevronDown } from 'lucide-react';
 
 const Hero = () => {
   return (
-    <section className="section hero" style={{ minHeight: '90vh', display: 'flex', alignItems: 'center', paddingTop: '120px' }}>
+    <section className="section hero" style={{ minHeight: '90vh', display: 'flex', alignItems: 'center', paddingTop: '120px', position: 'relative' }}>
       <div className="container">
         <div style={{ maxWidth: '700px' }}>
           <span className="section-label" style={{ color: 'var(--ds-mid)', fontWeight: '700' }}>Available for new opportunities</span>

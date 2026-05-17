@@ -44,7 +44,7 @@ const Contact = () => {
             </a>
           </div>
 
-          <div className="card" style={{ padding: '3rem' }}>
+          <div className="card contact-form-card">
             <h3 className="t-h2" style={{ marginBottom: '2rem' }}>Send a Message</h3>
             <div style={{ display: 'flex', flexDirection: 'column', gap: '1.5rem', maxWidth: '500px', margin: '0 auto' }}>
               <div style={{ textAlign: 'left' }}>

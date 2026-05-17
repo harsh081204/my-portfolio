@@ -30,7 +30,7 @@ const Skills = () => {
           <h2 className="t-h1" style={{ color: 'white' }}>Technical Capabilities</h2>
         </div>
 
-        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(400px, 1fr))', gap: '3rem' }}>
+        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(min(320px, 100%), 1fr))', gap: '3rem' }}>
           {skills.map((group, idx) => (
             <div key={idx}>
               <h3 className="t-h2" style={{ color: 'var(--ds-light)', marginBottom: '2rem', borderLeft: '3px solid var(--ds-accent)', paddingLeft: '1rem' }}>{group.category}</h3>
@@ -57,7 +57,7 @@ const Skills = () => {
           ))}
         </div>
 
-        <div style={{ marginTop: '5rem', padding: '2.5rem', background: 'rgba(255,255,255,0.05)', borderRadius: '16px', border: '1px solid rgba(255,255,255,0.1)' }}>
+        <div className="skills-tools-card">
           <h3 className="t-h2" style={{ color: 'white', fontSize: '1rem', marginBottom: '1.5rem' }}>Languages & Tools</h3>
           <div style={{ display: 'flex', gap: '1rem', flexWrap: 'wrap' }}>
             {["JavaScript", "Python", "C/C++", "Go", "React.js", "Next.js", "Streamlit", "PostgreSQL", "MongoDB", "Redis", "Kafka", "Docker", "AWS", "LangChain", "CrewAI", "Git"].map(tool => (

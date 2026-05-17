@@ -195,12 +195,148 @@ h1, h2, h3, .nav-logo {
   color: var(--ds-navy);
 }
 
-/* Responsive */
+/* Layout Components Responsive Overrides */
+.journey-grid {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  gap: 4rem;
+}
+
+.skills-tools-card {
+  margin-top: 5rem;
+  padding: 2.5rem;
+  background: rgba(255,255,255,0.05);
+  border-radius: 16px;
+  border: 1px solid rgba(255,255,255,0.1);
+}
+
+.projects-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  margin-bottom: 4rem;
+}
+
+.contact-form-card {
+  padding: 3rem;
+}
+
+.nav-mobile-toggle {
+  display: none;
+  background: none;
+  border: none;
+  color: var(--ds-navy);
+  cursor: pointer;
+  padding: 8px;
+  align-items: center;
+  justify-content: center;
+  transition: var(--transition);
+  border-radius: var(--radius-sm);
+}
+
+.nav-mobile-toggle:hover {
+  background: var(--ds-surface);
+  color: var(--ds-ink);
+}
+
+/* Responsive Styles */
 @media (max-width: 768px) {
-  .nav-links {
-    display: none;
+  .nav-mobile-toggle {
+    display: flex;
   }
+
+  .nav-links {
+    position: fixed;
+    top: 72px;
+    left: 0;
+    right: 0;
+    height: calc(100vh - 72px);
+    background: rgba(247, 248, 240, 0.98);
+    backdrop-filter: blur(20px);
+    flex-direction: column;
+    padding: 3.5rem 2rem;
+    gap: 2rem;
+    align-items: center;
+    justify-content: flex-start;
+    transform: translateY(-100%);
+    opacity: 0;
+    pointer-events: none;
+    transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.3s ease;
+    border-top: 1px solid var(--ds-border);
+    z-index: 999;
+  }
+
+  .nav-links.nav-links-mobile-open {
+    transform: translateY(0);
+    opacity: 1;
+    pointer-events: auto;
+  }
+
+  .nav-link {
+    font-size: 1.25rem;
+    font-weight: 600;
+    color: var(--ds-ink);
+    width: 100%;
+    text-align: center;
+    padding: 0.5rem 0;
+  }
+
+  .nav-links .btn {
+    width: 100%;
+    justify-content: center;
+    font-size: 1rem;
+    padding: 0.85rem 2rem;
+  }
+
   .section {
     padding: 4rem 0;
+  }
+
+  /* Journey timeline collapsing */
+  .journey-grid {
+    grid-template-columns: 1fr;
+    gap: 2.5rem;
+  }
+
+  /* Skills & Tools card spacing */
+  .skills-tools-card {
+    margin-top: 3rem;
+    padding: 1.5rem;
+  }
+
+  /* Projects section header layout collapses */
+  .projects-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1rem;
+    margin-bottom: 2.5rem;
+  }
+
+  /* Contact message card padding adjustment */
+  .contact-form-card {
+    padding: 2rem 1.5rem;
+  }
+}
+
+@media (max-width: 480px) {
+  /* Fluid typography and spacing for very small mobile screens */
+  .container {
+    padding: 0 1.25rem;
+  }
+  
+  .t-display {
+    font-size: 2.1rem;
+  }
+
+  .t-h1 {
+    font-size: 1.85rem;
+  }
+  
+  .skills-tools-card {
+    padding: 1.25rem;
+  }
+
+  .contact-form-card {
+    padding: 1.5rem 1rem;
   }
 }
