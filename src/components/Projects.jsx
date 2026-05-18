@@ -20,6 +20,14 @@ const Projects = () => {
       featured: true
     },
     {
+      name: "AI Changelog Writer",
+      subtitle: "Automated Impact Classifier & Changelog Generator",
+      desc: "Developer tool that ingests Git/GitHub PR diffs, classifies technical impact, suggests SemVer bumps, and auto-generates beautiful changelogs using Groq and BullMQ.",
+      tech: ["Next.js", "Redis", "BullMQ", "PostgreSQL", "Prisma"],
+      link: "https://github.com/harsh081204/changelog-writer",
+      featured: true
+    },
+    {
       name: "TradingAgents",
       subtitle: "Multi-Agent Financial Framework",
       desc: "Autonomous multi-agent system coordinating AI agents for financial analysis and trading strategy execution.",
