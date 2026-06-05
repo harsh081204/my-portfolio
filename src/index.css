@@ -59,8 +59,9 @@ h1, h2, h3, .nav-logo {
 }
 
 .section {
-  padding: 6rem 0;
+  padding: 2rem 0;
 }
+
 
 .section-label {
   font-size: 10px;
@@ -214,7 +215,7 @@ h1, h2, h3, .nav-logo {
   display: flex;
   justify-content: space-between;
   align-items: flex-end;
-  margin-bottom: 4rem;
+  margin-bottom: 2rem;
 }
 
 .contact-form-card {

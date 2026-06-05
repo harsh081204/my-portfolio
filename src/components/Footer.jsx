@@ -2,11 +2,11 @@ import React from 'react';
 
 const Footer = () => {
   return (
-    <footer className="section" style={{ padding: '4rem 0', background: 'var(--ds-navy)', color: 'rgba(255,255,255,0.6)' }}>
+    <footer className="section" style={{ padding: '0.5rem 0', background: 'var(--ds-navy)', color: 'rgba(255,255,255,0.6)' }}>
       <div className="container">
         <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', flexWrap: 'wrap', gap: '2rem' }}>
           <div>
-            <div className="nav-logo" style={{ color: 'white', marginBottom: '0.5rem' }}>HV.</div>
+            <div className="nav-logo" style={{ color: 'white', marginBottom: '0rem' }}>HV.</div>
             <p style={{ fontSize: '0.85rem' }}>© {new Date().getFullYear()} Harsh Vardhan. Built with React & Design System.</p>
           </div>
           

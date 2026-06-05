@@ -3,7 +3,7 @@ import { Mail, Linkedin, Github, Send } from 'lucide-react';
 
 const Contact = () => {
   return (
-    <section id="contact" className="section" style={{ background: 'var(--ds-surface)' }}>
+    <section id="contact" className="section" style={{ background: 'var(--ds-surface)',padding: '2rem' , }}>
       <div className="container">
         <div style={{ maxWidth: '800px', margin: '0 auto', textAlign: 'center' }}>
           <span className="section-label">Get in touch</span>
