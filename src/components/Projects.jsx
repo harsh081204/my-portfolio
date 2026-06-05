@@ -1,7 +1,7 @@
 import React from 'react';
-import { Github, ExternalLink } from 'lucide-react';
+import { Github, ExternalLink, BookOpen } from 'lucide-react';
 
-const Projects = () => {
+const Projects = ({ onViewBlog }) => {
   const projects = [
     {
       name: "Intelligent Fund Flow Tracking",
@@ -113,6 +113,15 @@ const Projects = () => {
                 <a href={proj.link} target="_blank" rel="noopener noreferrer" className="btn btn-ghost" style={{ padding: '0.5rem 1rem', fontSize: '0.8rem' }}>
                   <Github size={16} /> Code
                 </a>
+                {(proj.name === "PayFlow" || proj.name === "AutoML Pipeline") && (
+                  <button 
+                    onClick={() => onViewBlog(proj.name === "PayFlow" ? 'payflow' : 'automl')} 
+                    className="btn btn-primary" 
+                    style={{ padding: '0.5rem 1rem', fontSize: '0.8rem', gap: '0.5rem' }}
+                  >
+                    <BookOpen size={16} /> Technical Walkthrough
+                  </button>
+                )}
               </div>
             </div>
           ))}
